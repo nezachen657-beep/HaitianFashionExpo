@@ -3,16 +3,20 @@
     "version": ">= 3.0.0"
   },
   "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal"
-    },
-    "preview": {
-      "distribution": "internal"
-    },
-    "production": {}
+    "production": {
+      "ios": {
+        "appVersionSource": "remote",
+        "distribution": "store"
+      },
+      "android": {
+        "appVersionSource": "remote",
+        "distribution": "store"
+      }
+    }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "releaseChannel": "production"
+    }
   }
 }
