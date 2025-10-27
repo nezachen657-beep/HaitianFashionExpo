@@ -21,25 +21,23 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd HaitianFashionExpo
           npm ci
 
       - name: Inject Firebase env from secrets (optional)
         if: ${{ secrets.EXPO_FIREBASE_API_KEY != '' }}
         run: |
-          echo "EXPO_FIREBASE_API_KEY=${{ secrets.EXPO_FIREBASE_API_KEY }}" >> HaitianFashionExpo/.env
-          echo "EXPO_FIREBASE_AUTH_DOMAIN=${{ secrets.EXPO_FIREBASE_AUTH_DOMAIN }}" >> HaitianFashionExpo/.env
-          echo "EXPO_FIREBASE_PROJECT_ID=${{ secrets.EXPO_FIREBASE_PROJECT_ID }}" >> HaitianFashionExpo/.env
-          echo "EXPO_FIREBASE_STORAGE_BUCKET=${{ secrets.EXPO_FIREBASE_STORAGE_BUCKET }}" >> HaitianFashionExpo/.env
-          echo "EXPO_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.EXPO_FIREBASE_MESSAGING_SENDER_ID }}" >> HaitianFashionExpo/.env
-          echo "EXPO_FIREBASE_APP_ID=${{ secrets.EXPO_FIREBASE_APP_ID }}" >> HaitianFashionExpo/.env
-          echo "EXPO_FIREBASE_DATABASE_URL=${{ secrets.EXPO_FIREBASE_DATABASE_URL }}" >> HaitianFashionExpo/.env
+          echo "EXPO_FIREBASE_API_KEY=${{ secrets.EXPO_FIREBASE_API_KEY }}" >> .env
+          echo "EXPO_FIREBASE_AUTH_DOMAIN=${{ secrets.EXPO_FIREBASE_AUTH_DOMAIN }}" >> .env
+          echo "EXPO_FIREBASE_PROJECT_ID=${{ secrets.EXPO_FIREBASE_PROJECT_ID }}" >> .env
+          echo "EXPO_FIREBASE_STORAGE_BUCKET=${{ secrets.EXPO_FIREBASE_STORAGE_BUCKET }}" >> .env
+          echo "EXPO_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.EXPO_FIREBASE_MESSAGING_SENDER_ID }}" >> .env
+          echo "EXPO_FIREBASE_APP_ID=${{ secrets.EXPO_FIREBASE_APP_ID }}" >> .env
+          echo "EXPO_FIREBASE_DATABASE_URL=${{ secrets.EXPO_FIREBASE_DATABASE_URL }}" >> .env
 
       - name: Install eas-cli
         run: npm install -g eas-cli
 
       - name: Run EAS build (iOS)
-        working-directory: HaitianFashionExpo
         run: |
           eas whoami || true
           eas build -p ios --profile production --non-interactive
