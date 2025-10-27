@@ -1,0 +1,37 @@
+{
+  "name": "haitianfashionexpo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.tsx",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eas:build:ios": "eas build -p ios --profile production",
+    "eas:build:android": "eas build -p android --profile production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@expo/config": "^12.0.10",
+    "@expo/config-plugins": "^54.0.2",
+    "@expo/vector-icons": "^13.0.0",
+    "@react-native-async-storage/async-storage": "^1.18.2",
+    "@react-navigation/bottom-tabs": "^6.5.11",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/stack": "^6.3.20",
+    "expo": "~49.0.0",
+    "expo-image-picker": "~14.3.2",
+    "expo-location": "~16.1.0",
+    "expo-modules-autolinking": "^3.0.18",
+    "expo-modules-core": "^3.0.22",
+    "firebase": "^10.7.1",
+    "react": "18.2.0",
+    "react-native": "0.72.6",
+    "react-native-gesture-handler": "~2.12.0",
+    "react-native-safe-area-context": "^4.6.3",
+    "react-native-screens": "~3.22.0"
+  }
+}
